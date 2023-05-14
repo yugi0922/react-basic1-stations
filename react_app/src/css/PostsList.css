@@ -1,0 +1,52 @@
+.post-page-container {
+}
+
+.post-title {
+  padding: 30px 0;
+  padding-left: 130px;
+}
+
+.post-list-container {
+  padding-left: 130px;
+}
+
+.post-div-txt {
+  width: 450px;
+  height: 70px;
+  background-color: white;
+  margin-top: 20px;
+}
+
+.post-txt {
+  padding: 20px 40px;
+}
+
+.post-button {
+  font-size: 16px;
+  border: none;
+  border-radius: 3px;
+  background-color: springgreen;
+  color: white;
+  height: 30px;
+  width: 80px;
+  opacity: 0.7;
+}
+
+.post-contents-container {
+  float: left;
+}
+
+form {
+  padding-top: 127px;
+}
+
+.post-button-div {
+  padding-top: 30px;
+  padding-left: 575px;
+}
+
+.post-button {
+  font-weight: bold;
+  height: 50px;
+  width: 225px;
+}

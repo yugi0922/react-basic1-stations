@@ -1,5 +1,40 @@
 .main-title {
-  padding: 30px 0;
+  padding-top: 60px;
   text-align: center;
-  padding-right: 270px;
+  padding-right: 50px;
+}
+
+form {
+  padding-top: 60px;
+  text-align: center;
+}
+
+.thread-title {
+  width: 300px;
+  height: 50px;
+  border-radius: 3px;
+  border: 0px dimgray solid;
+}
+
+::placeholder {
+  padding-left: 5px;
+}
+
+.form-button {
+  padding-top: 35px;
+}
+
+.top-page-link {
+  padding-right: 140px;
+}
+
+.submit-button {
+  font-size: 16px;
+  border: none;
+  border-radius: 3px;
+  background-color: springgreen;
+  color: white;
+  height: 30px;
+  width: 80px;
+  opacity: 0.7;
 }

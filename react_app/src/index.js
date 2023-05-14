@@ -5,6 +5,7 @@ import reportWebVitals from "./other/reportWebVitals";
 import BulletinBoard from "./BulletinBoard";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { NewThread } from "./thread/NewThread";
+import PostsList from "./post/PostsList";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
@@ -15,9 +16,8 @@ root.render(
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<BulletinBoard />}></Route>
-      </Routes>
-      <Routes>
         <Route path="/thread/new" element={<NewThread />}></Route>
+        <Route path="/thread/:id/" element={<PostsList />}></Route>
       </Routes>
     </BrowserRouter>
   </>

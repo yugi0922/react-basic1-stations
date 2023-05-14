@@ -1,16 +1,3 @@
-.header-left {
-  color: azure;
-  float: left;
-  padding-top: 15px;
-  padding-left: 20px;
-  font-size: 30px;
-}
-.header-right {
-  float: right;
-  padding-top: 25px;
-  padding-right: 20px;
-}
-
 link {
   color: azure;
 }

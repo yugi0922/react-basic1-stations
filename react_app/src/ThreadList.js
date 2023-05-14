@@ -1,11 +1,13 @@
 import * as React from "react";
 import "./css/ThreadList.css";
+import { useCallback } from "react";
+import { useNavigate } from "react-router";
 
 function ThreadList() {
   // スレッド一覧
   const [thread, setThread] = React.useState([]);
-  // タイトル一覧リスト
-  var titleList = [];
+  // ページ遷移用API
+  const navigate = useNavigate();
 
   // APIからスレッド一覧を取得
   React.useEffect(() => {
@@ -14,25 +16,43 @@ function ThreadList() {
         return response.json();
       })
       .then(function (json) {
-        createThread(json);
+        setThread(json);
       });
   }, []);
-  const createThread = (json) => {
-    for (var i = 0; i < json.length; i++) {
-      console.log("json[i].title");
-      console.log(json[i].title);
-      titleList.push(json[i].title);
-      setThread(titleList);
-    }
-  };
+
+  // スレッド押下時、スレッド投稿一覧画面に遷移
+  // TODO IDをlocationではなくルーターのuseparamsでとってくる
+  //  →URLじかだだきでもページが表示できる
+  //https://reactrouter.com/en/main/hooks/use-params
+  const onClickPostList = useCallback(
+    (e) => {
+      e.preventDefault();
+      //eventからIDを取得
+      navigate(`/thread/${e.target.dataset.id}`, {
+        state: { id: e.target.dataset.id, title: e.target.innerText },
+      });
+    },
+    [navigate]
+  );
 
   return (
     <>
       <table>
         <tbody>
-          {thread.map((title) => (
-            <tr>
-              <td>{title}</td>
+          {thread.map((threadTitle, id) => (
+            <tr key={id}>
+              <td>
+                <a
+                  id="detail-link"
+                  href="/thread/id"
+                  className="detail-link"
+                  defaultValue={threadTitle.id}
+                  onClick={onClickPostList}
+                  data-id={threadTitle.id}
+                >
+                  {threadTitle.title}
+                </a>
+              </td>
             </tr>
           ))}
         </tbody>
